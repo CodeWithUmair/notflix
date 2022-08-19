@@ -1,6 +1,6 @@
 import React from "react";
 
-const ResultShow = () => {
+const Result = () => {
   return (
     <>
       <section className="results"></section>
@@ -8,4 +8,4 @@ const ResultShow = () => {
   );
 };
 
-export default ResultShow;
+export default Result;
