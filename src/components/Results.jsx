@@ -1,16 +1,18 @@
 import React from "react";
-import ResultShow from "./Result";
+import Result from "./Result";
 
-const Results = ({ results }) => {
-  return (
-    <>
-      <section className="results">
-        {results.map((result) => {
-          <ResultShow result={result} />;
-        })}
-      </section>
-    </>
-  );
-};
+const Results = ({ results }) => (
+  <>
+    <section className="results">
+      {results.map((result) => {
+        return (
+          <>
+            <Result result={result} />;
+          </>
+        );
+      })}
+    </section>
+  </>
+);
 
 export default Results;
