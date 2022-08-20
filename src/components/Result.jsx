@@ -1,14 +1,12 @@
 import React from "react";
 
-const Result = ({ result }) => {
+function Result({ result, openPopup }) {
   return (
-    <>
-      <section className="result">
-        <img src={result.Poster} alt="hello" />
-        <h3>{result.Title}</h3>
-      </section>
-    </>
+    <div className="result" onClick={() => openPopup(result.imdbID)}>
+      <img src={result.Poster} />
+      <h3>{result.Title}</h3>
+    </div>
   );
-};
+}
 
 export default Result;
