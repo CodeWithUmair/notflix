@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Search from "./components/Search";
 import Results from "./components/Results";
-// import Popup from "./components/Popup";
+import Popup from "./components/Popup";
 
 function App() {
   const [state, setState] = useState({
@@ -16,7 +16,6 @@ function App() {
   const search = (e) => {
     if (e.key === "Enter") {
       axios(apiurl + "&s=" + state.s).then(({ data }) => {
-        console.log(data);
         let results = data.Search;
 
         setState((prevState) => {
@@ -34,39 +33,42 @@ function App() {
     });
   };
 
-  // const openPopup = (id) => {
-  //   axios(apiurl + "&i=" + id).then(({ data }) => {
-  //     let result = data;
+  const openPopup = (id) => {
+    axios(apiurl + "&i=" + id).then(({ data }) => {
+      let result = data;
 
-  //     console.log(result);
+      console.log(result);
 
-  //     setState((prevState) => {
-  //       return { ...prevState, selected: result };
-  //     });
-  //   });
-  // };
+      setState((prevState) => {
+        return { ...prevState, selected: result };
+      });
+    });
+  };
 
-  // const closePopup = () => {
-  //   setState((prevState) => {
-  //     return { ...prevState, selected: {} };
-  //   });
-  // };
+  const closePopup = () => {
+    setState((prevState) => {
+      return { ...prevState, selected: {} };
+    });
+  };
+  const returnToHomePage = () => {
+    setState({ s: "", results: [], selected: {} });
+  };
 
   return (
     <div className="App">
       <header>
-        <h1>Notflix</h1>
+        <h1 onClick={returnToHomePage}>Notflix 😎</h1>
       </header>
       <main>
         <Search handleInput={handleInput} search={search} />
 
-        <Results results={state.results} />
+        <Results results={state.results} openPopup={openPopup} />
 
-        {/* {typeof state.selected.Title != "undefined" ? (
+        {typeof state.selected.Title != "undefined" ? (
           <Popup selected={state.selected} closePopup={closePopup} />
         ) : (
           false
-        )} */}
+        )}
       </main>
     </div>
   );
