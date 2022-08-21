@@ -160,7 +160,7 @@ section {
   font-size: 18px;
   font-weight: 700;
 
-  background: #4484C4;
+  background: #d63031;
   color: #FFF;
   border-radius: 8px;
   border: none;
@@ -172,5 +172,5 @@ section {
 }
 
 .popup .content .close:hover {
-  background: #223343;
+  background: #a29bfe;
 }
