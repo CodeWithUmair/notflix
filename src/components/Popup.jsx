@@ -10,7 +10,15 @@ function Popup({ selected, closePopup }) {
         <p className="rating">Rating: {selected.imdbRating}</p>
         <div className="plot">
           <img src={selected.Poster} />
-          <p>{selected.Plot}</p>
+          <p>
+            Box Office : {selected.BoxOffice} <br />
+            <br />
+            <br />
+            Movie Length : {selected.Runtime} <br />
+            <br />
+            <br />
+            {selected.Plot}
+          </p>
         </div>
         <button className="close" onClick={closePopup}>
           Close

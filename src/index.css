@@ -76,7 +76,7 @@ section {
 }
 
 .results .result h3 {
-  color: #FFF;
+  color: #Ea2027;
   font-size: 20px;
   font-weight: 600;
   padding: 10px;
@@ -87,12 +87,18 @@ section {
 
 .results .result h3 span {
   font-size: 0.8rem;
+  transition: 0.3s ease-out;
   color: antiquewhite;
+}
+
+.results .result:hover h3 span {
+  font-size: 0.8rem;
+  color: #ea2027;
 }
 
 .results .result:hover h3 {
   background: #FFF;
-  color: #223343;
+  color: #2ecc71;
 }
 
 .popup {
@@ -145,6 +151,7 @@ section {
 .popup .content .plot p {
   flex: 1 1 50%;
   padding: 15px;
+  text-align: justify;
 }
 
 .popup .content .close {
