@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1 onClick={returnToHomePage}>Notflix 🎞</h1>
+        <h1 onClick={returnToHomePage}>Notflix 😎</h1>
       </header>
       <main>
         <Search handleInput={handleInput} search={search} />
